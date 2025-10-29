@@ -1,0 +1,43 @@
+#spring.application.name=Currency-Storage-Service
+
+spring:
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: "currency-1"
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: com.example.currencystorageservice.DTO.CurrencyDto
+        spring.json.use.type.headers: false
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    admin:
+      auto-create: true
+      properties:
+        replication.factor: 1
+
+  application:
+    name: Currency-Storage-Service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres
+    password: root
+    username: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+topic:
+  send-currency: send-currency-event-v2
+
+server:
+  port: 8082
