@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/currency-analytics-service/currency-analytics-service.iml" filepath="$PROJECT_DIR$/currency-analytics-service/currency-analytics-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/currency-fetcher-service/currency-fetcher-service.iml" filepath="$PROJECT_DIR$/currency-fetcher-service/currency-fetcher-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/Currency-Storage-Service/currency-storage-service.iml" filepath="$PROJECT_DIR$/Currency-Storage-Service/currency-storage-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/currency-tracker.iml" filepath="$PROJECT_DIR$/currency-tracker.iml" />

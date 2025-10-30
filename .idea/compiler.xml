@@ -3,6 +3,15 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for currency-analytics-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="currency-analytics-service" />
+      </profile>
       <profile name="Annotation profile for Currency-Storage-Service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -15,6 +24,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="currency-analytics-service" target="18" />
       <module name="currency-fetcher-service" target="18" />
       <module name="currency-storage-service" target="18" />
       <module name="demo" target="18" />
@@ -22,6 +32,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="currency-analytics-service" options="-parameters" />
       <module name="currency-fetcher-service" options="-parameters" />
       <module name="currency-storage-service" options="-parameters" />
       <module name="demo" options="-parameters" />
