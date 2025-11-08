@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 
 services:
   zookeeper:
@@ -61,6 +61,8 @@ services:
     environment:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       SPRING_KAFKA_ADMIN_PROPERTIES_REPLICATION_FACTOR: 1
+      EXCHANGE_RATE_API_KEY: ${EXCHANGE_RATE_API_KEY}
+      EXCHANGE_RATE_API_URL: ${EXCHANGE_RATE_API_URL}
     restart: unless-stopped
 
   currency-store-service:
@@ -79,6 +81,19 @@ services:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
     restart: unless-stopped
 
+  currency-analytics-service:
+    build:
+      context: ./currency-analytics-service
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    restart: unless-stopped
 volumes:
   postgres_data:
   zk_data:

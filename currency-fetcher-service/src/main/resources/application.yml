@@ -19,7 +19,7 @@ topic:
   send-currency: send-currency-event-v2
 
 exchange-rate-api:
-  key: 32cccc1183ded4da1b404084
-  base-url: https://v6.exchangerate-api.com/v6
+  key: ${EXCHANGE_RATE_API_KEY}
+  base-url: ${EXCHANGE_RATE_API_URL:https://v6.exchangerate-api.com/v6}
 server:
   port: 8081
