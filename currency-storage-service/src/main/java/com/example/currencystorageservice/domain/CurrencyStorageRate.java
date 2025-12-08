@@ -1,4 +1,4 @@
-package com.example.currencystorageservice.Domain;
+package com.example.currencystorageservice.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

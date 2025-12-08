@@ -1,11 +1,10 @@
-package com.example.currencystorageservice.Service;
+package com.example.currencystorageservice.service;
 
 import com.example.currencystorageservice.DTO.CurrencyDto;
-import com.example.currencystorageservice.Domain.CurrencyStorageRate;
-import com.example.currencystorageservice.Repository.CurrensyStorageRepository;
+import com.example.currencystorageservice.domain.CurrencyStorageRate;
+import com.example.currencystorageservice.repository.CurrensyStorageRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

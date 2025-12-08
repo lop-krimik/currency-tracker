@@ -1,4 +1,4 @@
-package com.example.currencystorageservice.Service;
+package com.example.currencystorageservice.service;
 
 import com.example.currencystorageservice.DTO.CurrencyDto;
 import lombok.RequiredArgsConstructor;

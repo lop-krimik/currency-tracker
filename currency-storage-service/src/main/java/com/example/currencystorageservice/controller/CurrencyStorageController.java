@@ -1,9 +1,8 @@
-package com.example.currencystorageservice.Controller;
+package com.example.currencystorageservice.controller;
 
 
-import com.example.currencystorageservice.DTO.CurrencyDto;
-import com.example.currencystorageservice.Domain.CurrencyStorageRate;
-import com.example.currencystorageservice.Service.CurrencyStorageService;
+import com.example.currencystorageservice.domain.CurrencyStorageRate;
+import com.example.currencystorageservice.service.CurrencyStorageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

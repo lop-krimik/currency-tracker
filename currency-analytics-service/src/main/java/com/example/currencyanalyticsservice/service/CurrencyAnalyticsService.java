@@ -21,10 +21,13 @@ public class CurrencyAnalyticsService {
         return currencyAnalyticsRepository.averageAllTime(targetCode);
     }
 
-    public Double maxMinValue(String targetCode) {
-        return currencyAnalyticsRepository.maxMinValue(targetCode);
+    public Double maxValue(String targetCode) {
+        return currencyAnalyticsRepository.maxValue(targetCode);
     }
 
+    public Double minValue(String targetCode) {
+        return currencyAnalyticsRepository.minValue(targetCode);
+    }
     public Double currencyVolatility(String targetCode) {
         double avg = currencyAnalyticsRepository.averageAllTime(targetCode);
         List<Double> rate = currencyAnalyticsRepository.rate(targetCode);

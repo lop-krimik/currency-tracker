@@ -17,7 +17,7 @@ public class RestService {
 
     public CurrencyDto fetchRates(String baseCurrency){
         String URL = baseUrl + "/" + apiKey + "/latest/" + baseCurrency;
-      return restClient.get()
+        return restClient.get()
                 .uri(URL)
                 .retrieve()
                 .body(CurrencyDto.class);

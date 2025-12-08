@@ -21,8 +21,11 @@ public interface CurrencyAnalyticsRepository extends JpaRepository<CurrencyAnaly
     @Query("SELECT AVG(c.rate) FROM CurrencyAnalyticsRate c WHERE c.targetCode =:target")
     Double averageAllTime(@Param("target") String targetCode);
 
-    @Query("SELECT MAX(c.rate), MIN(c.rate) FROM CurrencyAnalyticsRate c WHERE c.targetCode =:target")
-    Double maxMinValue(@Param("target") String targetCode);
+    @Query("SELECT MAX(c.rate) FROM CurrencyAnalyticsRate c WHERE c.targetCode =:target")
+    Double maxValue(@Param("target") String targetCode);
+
+    @Query("SELECT MIN(c.rate) FROM CurrencyAnalyticsRate c WHERE c.targetCode =:target")
+    Double minValue(@Param("target") String targetCode);
 
     @Query("SELECT c.rate FROM CurrencyAnalyticsRate c WHERE c.targetCode =:target")
     List<Double> rate(@Param("target") String targetCode);

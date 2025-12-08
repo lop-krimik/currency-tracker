@@ -31,9 +31,14 @@ public class CurrencyAnalyticsController {
         return currencyAnalyticsService.averageAllTime(targetCode);
     }
 
-    @PostMapping("/maxMinValue")
-    public Double maxMinValue(@RequestParam String targetCode) {
-        return currencyAnalyticsService.maxMinValue(targetCode);
+    @PostMapping("/maxValue")
+    public Double maxValue(@RequestParam String targetCode) {
+        return currencyAnalyticsService.maxValue(targetCode);
+    }
+
+    @PostMapping("/minValue")
+    public Double minValue(@RequestParam String targetCode) {
+        return currencyAnalyticsService.minValue(targetCode);
     }
 
     @PostMapping("/volatility")
